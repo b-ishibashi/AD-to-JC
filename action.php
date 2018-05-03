@@ -4,8 +4,16 @@ function ad2jc($ad)
 {
     $ad = (int)$ad;
 
-    if ($ad < 1926) {
+    if ($ad < 1868) {
         return false;
+    }
+
+    if ($ad < 1912) {
+        return '明治' . ($ad - 1867);
+    }
+
+    if ($ad < 1926) {
+        return '大正' . ($ad - 1911);
     }
 
     if ($ad < 1989) {
