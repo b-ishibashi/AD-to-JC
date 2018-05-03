@@ -6,7 +6,7 @@
 </head>
 <body>
     <form action="action.php" method="get">
-        <label>西暦:<input type="text" name="AD" maxlength="4" value=""></label>
+        <label>西暦:<input type="text" name="AD" maxlength="4" value="">年</label>
         <input type="submit" value="送信する">
     </form>
 </body>
