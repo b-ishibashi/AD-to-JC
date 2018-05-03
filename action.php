@@ -24,8 +24,10 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 
- $ad = $_GET['AD'];
- $jc = ad2jc($ad);
+if (isset($_GET['AD'])) {
+    $ad = $_GET['AD'];
+    $jc = ad2jc($ad);
+}
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +37,7 @@ function h($str)
     <title>和暦西暦変換</title>
 </head>
 <body>
-<?php if ($jc === false): ?>
+<?php if (!isset($jc) || $jc === false): ?>
     <p>
         エラー
     </p>
