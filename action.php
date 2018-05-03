@@ -59,16 +59,17 @@ if (isset($_GET['AD'])) {
 <head>
     <meta charset="utf-8">
     <title>和暦西暦変換</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="balloon">
 <?php if (!isset($jc) || $jc === false): ?>
-    <p>
-        エラー
-    </p>
+            <p>エラー</p>
 <?php else: ?>
-    <p>
-        西暦<?= h($ad) ?>年は<?= h($jc) ?>年です。
-    </p>
+            <p>西暦<?= h($ad) ?>年は<?= h($jc) ?>年です。</p>
 <?php endif; ?>
+        </div>
+    </div>
 </body>
 </html>
