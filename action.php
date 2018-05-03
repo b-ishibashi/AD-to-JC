@@ -1,5 +1,7 @@
 <?php
 
+mb_internal_encoding('UTF-8');
+
 function ad2jc($ad)
 {
     $ad = (int)$ad;
@@ -27,6 +29,19 @@ function ad2jc($ad)
     return false;
 }
 
+function gannen($jc)
+{
+    if ($jc === false) {
+        return false;
+    }
+
+    if (mb_substr($jc, 2) === '1') {
+        return mb_substr($jc, 0, 2) . '元';
+    }
+
+    return $jc;
+}
+
 function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -35,6 +50,7 @@ function h($str)
 if (isset($_GET['AD'])) {
     $ad = $_GET['AD'];
     $jc = ad2jc($ad);
+    $jc = gannen($jc);
 }
 
 ?>
