@@ -22,11 +22,11 @@ function ad2jc($ad)
         return '昭和' . ($ad - 1925);
     }
 
-    if ($ad < 2020) {
+    if ($ad < 2019) {
         return '平成' . ($ad - 1988);
     }
 
-    return false;
+    return '令和' . ($ad - 2018);
 }
 
 function gannen($jc)
